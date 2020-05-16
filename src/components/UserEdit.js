@@ -23,7 +23,7 @@ class userEdit extends React.Component {
 
     render(){
         return (
-            <div style={{backgroundColor:"LightGray"}}>
+            <div style={{backgroundColor:"#8FBC8F"}}>
                 <br/>
                 <br/>
                  <Grid container spacing={1} >
@@ -40,7 +40,7 @@ class userEdit extends React.Component {
                                     <Field id="country" name="country" component={this.renderInput} label="Country" margin="normal" />
                                     <Fab variant="extended" aria-label="Submit" type='submit'
                                          className='button-decorate'>
-                                        Submit
+                                        Edit
                                     </Fab>
                                 </form>
 

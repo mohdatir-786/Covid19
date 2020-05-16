@@ -10,14 +10,14 @@ class userProfile extends React.Component{
         UserProfile:true
     }
     render() {
-        return  <div style={{backgroundColor:"LightGray"}}>
+        return  <div style={{backgroundColor:"#8FBC8F"}}>
             <br/>
             <br/>
                               <Grid container spacing={1} >
                                 <Grid item sm={6}>
                                     <Container maxWidth='sm'>
                                         <Paper className='border-decorate' elevation={3}
-                                               style={{textAlign: 'center', padding: '80px',marginTop:"50px"}}>
+                                               style={{textAlign: 'center', padding: '80px',marginTop:"100px"}}>
                                               <div><h1>Profile</h1></div>
                                              <div style={{border:"1px solid black"}}>
                                                  <label>Name:</label>

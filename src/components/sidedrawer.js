@@ -4,11 +4,13 @@ import {logout} from "../Actions/authAction";
 import {connect} from "react-redux";
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import {SwipeableDrawer} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import {Link} from "react-router-dom";
+import history from "./history";
 
 const useStyles = makeStyles({
     list: {
@@ -47,9 +49,8 @@ const useStyles = makeStyles({
                 {
                     props.isAuth ?
                         <>
-                            <Link to="/userProfile" className="item">
-                                <div style={{border:"1px solid black"}}>
-                                <ListItem button key={1}>
+                            <div style={{border:"1px solid black"}}>
+                                <ListItem button onClick={()=>history.push("/userProfile")} key={1}>
                                     <ListItemText primary={localStorage.getItem("email")} />
                                 </ListItem>
                                 </div>
@@ -58,16 +59,15 @@ const useStyles = makeStyles({
                                     <ListItemText primary={'Logout'}/>
                                 </ListItem>
                                 </div>
-                            </Link>
                         </>
                         :
                         <>
-                            <Link to="/Sign_up" className="item">
-                                Sign_up
-                            </Link>
-                            <Link to="/Login" className="item">
-                                Login
-                            </Link>
+                            <ListItem button onClick={()=>history.push("/register")} key={1}>
+                                <ListItemText primary="Register" />
+                            </ListItem>
+                            <ListItem button onClick={()=>history.push("/login")} key={1}>
+                                <ListItemText primary="Login" />
+                            </ListItem>
                         </>
                 }
             </List>
@@ -76,14 +76,19 @@ const useStyles = makeStyles({
 
     return (
         <div>
-            {['right'].map((anchor) => (
-                <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                        {list(anchor)}
-                    </Drawer>
-                </React.Fragment>
-            ))}
+            <React.Fragment key={'right'}>
+                <Button onClick={toggleDrawer('right', true)}>
+                    <MenuIcon style={{color:'white'}}/>
+                </Button>
+                <SwipeableDrawer
+                    anchor={'right'}
+                    open={state['right']}
+                    onClose={toggleDrawer('right', false)}
+                    onOpen={toggleDrawer('right', true)}
+                >
+                    {list('right')}
+                </SwipeableDrawer>
+            </React.Fragment>
         </div>
     );
 }

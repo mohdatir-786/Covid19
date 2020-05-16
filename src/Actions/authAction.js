@@ -42,7 +42,7 @@ export const authLogin = (formValues) =>
         const token=response.data.token;
         localStorage.setItem("token",token);
         dispatch(AuthSuccess(token));
-        dispatch(userprofile_Actions())
+        dispatch(userprofile_Actions());
         history.push("/");
     }catch(err) {
        dispatch(AuthFailure(err))
@@ -67,9 +67,7 @@ export const signup_Actions=(formValues)=>async  dispatch=>{
 };
 
 
-
 export const logout=()=>async dispatch=>{
-
     await post.get("/api/user/logout",{
             headers:{
                 Authorization:`Token ${localStorage.getItem("token")}`,
@@ -79,6 +77,6 @@ export const logout=()=>async dispatch=>{
     localStorage.removeItem("token");
     localStorage.removeItem("email")
     dispatch(AuthLogout());
-    history.push("/Login");
+    history.push("/");
 
 }

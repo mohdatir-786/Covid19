@@ -5,13 +5,11 @@ import {AppBar, Toolbar, Typography} from "@material-ui/core";
 import TemporaryDrawer from "./sidedrawer";
 const Header =(props)=>{
     return  <>
-        <AppBar position='fixed' style={{backgroundColor: 'grey'}}>
+        <AppBar position='fixed' style={{backgroundColor: 'black'}}>
             <Toolbar >
                 <Link to='/' style={{textDecoration: "none"}}>
-                    <Typography variant="h5" align='center' style={{color:"black"}}>
+                    <Typography variant="h5" align='center' style={{color:"white"}}>
                         Home
-                        <br/>
-
                     </Typography>
                 </Link>
               <hr/>
@@ -19,7 +17,6 @@ const Header =(props)=>{
 
             </Toolbar>
         </AppBar>
-        <br/>
         <br/>
         <br/>
         <br/>

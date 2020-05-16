@@ -2,12 +2,12 @@ import React from "react";
 import {connect} from "react-redux";
 import {Field,reduxForm} from "redux-form";
 import {authLogin} from "../Actions/authAction";
-import AppBar from "./AppBar";
+import SideBar from "./SideBar";
 import Paper from "@material-ui/core/Paper";
 import Button from '@material-ui/core/Button';
 import {Container, TextField, Grid,Box} from "@material-ui/core";
 class Login extends React.Component {
-state={error:null}
+          state={error:null}
        renderInput=({input,label, type,id,margin})=>{
         return (
                 <Box>
@@ -23,12 +23,12 @@ state={error:null}
     }
     render() {
         return (
-            <div style={{backgroundColor:"grey"}}>
+            <div style={{backgroundColor:"#c7ddc7"}}>
                 <br/>
                 <br/>
                 <Grid container spacing={1} style={{marginTop:"50px"}}>
                     <Grid item sm={2}>
-                        <AppBar/>
+                        <SideBar/>
                     </Grid>
                     <Grid item sm={10}>
                         <Container maxWidth='sm'>

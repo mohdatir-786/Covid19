@@ -4,7 +4,7 @@ import {Field,reduxForm} from "redux-form";
 import {signup_Actions} from "../Actions/authAction";
 import history from "./history";
 import {Container, Grid, TextField, Box,Fab} from "@material-ui/core";
-import AppBar from "./AppBar";
+import SideBar from "./SideBar";
 import Paper from "@material-ui/core/Paper";
 class Sign_up extends React.Component {
 
@@ -23,12 +23,12 @@ class Sign_up extends React.Component {
     }
     render() {
         return (
-            <div style={{backgroundColor:"LightGray"}}>
+            <div style={{backgroundColor:"#8FBC8F"}}>
                 <br/>
                 <br/>
                 <Grid container spacing={1} >
                     <Grid item sm={2}>
-                        <AppBar/>
+                        <SideBar/>
                     </Grid>
                     <Grid item sm={10}>
                         <Container maxWidth='sm'>
@@ -42,7 +42,7 @@ class Sign_up extends React.Component {
                 <Field id="password" type="password" name="Confirm_password" component={this.renderInput} label="Confirm_Password" margin="normal" />
                 <Fab variant="extended" aria-label="Signup" type='submit'
                      className='button-decorate'>
-                    Signup
+                    Register
                 </Fab>
             </form>
 

@@ -20,5 +20,4 @@ export const userEditActions=(formValues)=> async dispatch=>{
     });
 
     dispatch({type:"EDIT_PROFILE",payload:response.data});
-
 };
